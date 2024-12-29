@@ -1,2 +1,2 @@
-# subport
-Trình duyệt tối giản để nộp bài lập trình
+# subpot
+Trình duyệt tối giản chỉ để nộp bài thi.
