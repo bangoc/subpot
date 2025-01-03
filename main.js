@@ -1,15 +1,29 @@
 const { app, BrowserWindow, Menu, MenuItem, BrowserView, ipcMain } = require('electron/main')
 const path = require('node:path')
 
-function createWindow () {
+async function createWindow () {
   const win = new BrowserWindow({
     width: 800,
     height: 600
   })
 
-  // win.setMenu(null)
+  var config;
+  try {
+    config = await fetch('https://bangoc.github.io/subpot/config.json')
+                            .then(res => {
+                        if (!res.ok) {
+                          throw new Error("Lỗi tải dữ liệu")
+                        }
+                        return res.json()
+                    })
 
-  const config = require('./config-default.json')
+    console.log("Fetch success config: " + JSON.stringify(config))
+  } catch {
+    console.log("Fetch failed, fallback to default!")
+    config = require('./config-default.json')
+  }
+
+  console.log("Final config: " + JSON.stringify(config))
 
   win.loadURL(config['home'])
 
@@ -59,6 +73,7 @@ menu.append(new MenuItem({
 Menu.setApplicationMenu(menu)
 
 app.whenReady().then(() => {
+
   createWindow()
 
   app.on('activate', () => {
