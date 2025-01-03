@@ -1,10 +1,11 @@
-const { app, BrowserWindow, Menu, MenuItem, BrowserView, ipcMain } = require('electron/main')
+const { app, dialog, BrowserWindow, Menu, MenuItem } = require('electron/main')
 const path = require('node:path')
 
 async function createWindow () {
   const win = new BrowserWindow({
     width: 800,
-    height: 600
+    height: 600,
+    icon: 'images/icon.png'
   })
 
   var config;
@@ -60,6 +61,23 @@ function doReload() {
   }
 }
 
+about_options = {
+  type: 'info',
+  title: 'Giới thiệu',
+  icon: 'images/icon.png',
+  message: 'Phiên bản ' + app.getVersion(),
+  detail: 'Chương trình hỗ trợ giới hạn truy cập mạng.\n' +
+           'Tác giả: Nguyễn Bá Ngọc\n' +
+           'email: ngocnb@soict.hust.edu.vn'
+}
+
+function doAbout() {
+  windows = BrowserWindow.getAllWindows();
+  if (windows.length === 1) {
+    dialog.showMessageBox(windows[0], about_options)
+  }
+}
+
 const menu = new Menu()
 menu.append(new MenuItem({
   label: '🔙 Trang trước',
@@ -68,6 +86,10 @@ menu.append(new MenuItem({
 menu.append(new MenuItem({
   label: '⟳ Tải lại',
   click: () => doReload()
+}))
+menu.append(new MenuItem({
+  label: '? Giới thiệu',
+  click: () =>doAbout()
 }))
 
 Menu.setApplicationMenu(menu)
