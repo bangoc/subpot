@@ -65,7 +65,7 @@ about_options = {
   type: 'info',
   title: 'Giới thiệu',
   icon: 'images/icon.png',
-  message: 'Phiên bản ' + app.getVersion(),
+  message: 'SubPot phiên bản ' + app.getVersion(),
   detail: 'Chương trình hỗ trợ giới hạn truy cập mạng.\n' +
            'Tác giả: Nguyễn Bá Ngọc\n' +
            'email: ngocnb@soict.hust.edu.vn'
