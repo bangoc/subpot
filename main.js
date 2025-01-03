@@ -2,6 +2,14 @@ const { app, dialog, BrowserWindow, Menu, MenuItem } = require('electron/main')
 const fs = require("fs");
 const path = require('node:path')
 
+const additional_data = { subpot: '1.0.0' }
+const got_the_lock = app.requestSingleInstanceLock(additional_data)
+
+if (!got_the_lock) {
+  app.exit(0)
+  console.log("Cannot get the lock!")
+}
+
 const app_path = app.getAppPath()
 const config_override = path.join(app_path, "config-override")
 const local_default_config = path.join(app_path, "config-default.json")
