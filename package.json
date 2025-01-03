@@ -1,0 +1,27 @@
+{
+  "name": "subpot",
+  "version": "1.0.0",
+  "description": "Trình duyệt giới hạn, hỗ trợ nộp bài thi lập trình",
+  "main": "main.js",
+  "scripts": {
+    "electron": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bangoc/subpot.git"
+  },
+  "keywords": [
+    "Ứng dụng máy khách",
+    "lập trình"
+  ],
+  "author": "bangoc",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/bangoc/subpot/issues"
+  },
+  "homepage": "https://github.com/bangoc/subpot#readme",
+  "devDependencies": {
+    "electron": "^33.2.1"
+  }
+}
