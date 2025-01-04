@@ -1,1 +1,1 @@
-npm run package --arch='x64'
+npx electron-forge package --arch=x64

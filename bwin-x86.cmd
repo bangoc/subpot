@@ -1,1 +1,1 @@
-npm run package --arch='ia32'
+npx electron-forge package --arch=ia32
