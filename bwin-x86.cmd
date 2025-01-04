@@ -1,0 +1,1 @@
+npm run package --arch='ia32'
