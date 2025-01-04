@@ -2,7 +2,7 @@ const { app, dialog, BrowserWindow, Menu, MenuItem } = require('electron/main')
 const fs = require("fs");
 const path = require('node:path')
 
-const additional_data = { subpot: '1.0.0' }
+const additional_data = { subpot: 'subpot.exe' }
 const got_the_lock = app.requestSingleInstanceLock(additional_data)
 
 if (!got_the_lock) {
