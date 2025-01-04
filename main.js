@@ -10,9 +10,9 @@ if (!got_the_lock) {
   console.log("Cannot get the lock!")
 }
 
-const app_path = app.getAppPath()
-const config_override = path.join(app_path, "config-override")
-const local_default_config = path.join(app_path, "config-default.json")
+const exe_path = path.dirname(app.getPath("exe"))
+const config_override = path.join(exe_path, "config-override")
+const local_default_config = path.join(exe_path, "config-default.json")
 
 var config;
 

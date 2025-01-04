@@ -1,7 +1,7 @@
 {
   "name": "subpot",
-  "version": "1.0.0",
-  "description": "Trình duyệt giới hạn, hỗ trợ nộp bài thi lập trình",
+  "version": "1.0.1",
+  "description": "Trình duyệt tối giản cihr để nộp bài thi.",
   "main": "main.js",
   "scripts": {
     "electron": "electron .",
